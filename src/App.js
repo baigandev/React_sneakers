@@ -1,28 +1,40 @@
 import './index.scss';
+import {BsPlusLg,BsSearch} from "react-icons/bs";
 
+
+
+import "macro-css"
+import Card from "./components/Card";
+import Header from "./components/Header";
+import Drawer from "./components/Drawer";
 function App(){
    return (
-    <div className='wrapper'>
-      <header>
-     <div className="headerLeft">
-     <svg/>
-         <div className="headerInfo">
-            <h3> React Sneakers </h3>
-            <p>Магазин лучших кросовок </p>
-         </div>
-     </div>
+    <div className='wrapper clear'>
+  <Drawer/>
+   <Header/>
       
+      <div className="content p-40">
+   
+   <div className='d-flex align-center justify-between mb-40'>
+   <h1>Все кроссовки</h1>
+   <div className='search-block'>
+     <BsSearch/>
+     <input placeholder='Поиск.....'/>
+   </div>
+   </div>
+           
+           
+<div className='d-flex'>
 
-         <ul>
-            <li>
-               <svg/>
-               <span>1205 руб.</span>
-            </li>
-            <li>
-               <svg/>
-            </li>
-         </ul>
-      </header>
+ <Card/>
+ <Card/>
+ <Card/>
+ <Card/>
+
+      
+</div>
+      
+      </div>
       </div>
    )
 }
