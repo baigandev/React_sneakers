@@ -1,9 +1,10 @@
 import {VscHeartFilled} from "react-icons/vsc";
 import {BsPlusLg} from "react-icons/bs";
-function Card(){
+import styles from "./Card.module.scss"
+function Card(props){
     return (
-<div className='card'>
-   <div className='d-flex align-center justify-center like' style={{
+<div className={styles.card}>
+   <div className={styles.like} style={{
       background: "pink",
       width: "25px",
       height: "25px",
@@ -13,12 +14,12 @@ function Card(){
    }}>
       <VscHeartFilled />
    </div>
-          <img width={183} height={162} src='/img/sneakers.webp' alt='sneackers'/>
-          <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+          <img width={183} height={162} src={props.imgUrl} alt='sneackers'/>
+          <h5>{props.title}</h5>
           <div className='d-flex justify-between align-center'>
             <div className='d-flex flex-column'>
                <span>Цена:</span>
-               <b>12 999 руб.</b>
+               <b>{props.price}</b>
             </div>
             <a className='button d-flex justify-center align-center'>
                <BsPlusLg/>
